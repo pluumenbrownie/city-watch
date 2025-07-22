@@ -1,25 +1,26 @@
 {
   # Ensure this is unique among all clans you want to use.
-  meta.name = "__CHANGE_ME__";
+  meta.name = "city-watch";
 
   inventory.machines = {
     # Define machines here.
-    # jon = { };
+    vimes = {
+      tags = [];
+      deploy.targetHost = "root@192.168.1.183";
+    };
   };
 
   # Docs: See https://docs.clan.lol/reference/clanServices
   inventory.instances = {
-
     # Docs: https://docs.clan.lol/reference/clanServices/admin/
     # Admin service for managing machines
     # This service adds a root password and SSH access.
     admin = {
-      roles.default.tags.all = { };
+      roles.default.tags.all = {};
       roles.default.settings.allowedKeys = {
         # Insert the public key that you want to use for SSH access.
         # All keys will have ssh access to all machines ("tags.all" means 'all machines').
         # Alternatively set 'users.users.root.openssh.authorizedKeys.keys' in each machine
-        "admin-machine-1" = "__YOUR_PUBLIC_KEY__";
       };
     };
 
@@ -32,10 +33,10 @@
       # Replace with the name (string) of your machine that you will use as zerotier-controller
       # See: https://docs.zerotier.com/controller/
       # Deploy this machine first to create the network secrets
-      roles.controller.machines."__YOUR_CONTROLLER__" = { };
+      roles.controller.machines."vimes" = {};
       # Peers of the network
       # tags.all means 'all machines' will joined
-      roles.peer.tags.all = { };
+      roles.peer.tags.all = {};
     };
   };
 
@@ -46,5 +47,14 @@
     # jon = { config, ... }: {
     #   environment.systemPackages = [ pkgs.asciinema ];
     # };
+    vimes = {
+      config,
+      pkgs,
+      ...
+    }: {
+      users.users.root.openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM+WzQti2XAEbUcQ48olNRJcleDeJ714fZX2bJulJPGu wessel@ultrapc"
+      ];
+    };
   };
 }
