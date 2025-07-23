@@ -5,8 +5,8 @@
   inventory.machines = {
     # Define machines here.
     vimes = {
-      tags = [];
-      deploy.targetHost = "root@192.168.1.183";
+      tags = ["commander"];
+      deploy.targetHost = "root@192.168.1.186";
     };
   };
 
@@ -21,6 +21,7 @@
         # Insert the public key that you want to use for SSH access.
         # All keys will have ssh access to all machines ("tags.all" means 'all machines').
         # Alternatively set 'users.users.root.openssh.authorizedKeys.keys' in each machine
+        ultrapc = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILMv4jxCrKDjbeFhO57v+V6Ck12zVkGfOTGJhr2GNs4y wessel@ultrapc";
       };
     };
 
@@ -38,23 +39,56 @@
       # tags.all means 'all machines' will joined
       roles.peer.tags.all = {};
     };
+
+    garage = {
+      # https://nixos.org/manual/nixos/stable/#module-services-garage
+
+      roles.default.machines."vimes".settings = {};
+    };
   };
 
   # Additional NixOS configuration can be added here.
   # machines/jon/configuration.nix will be automatically imported.
   # See: https://docs.clan.lol/guides/more-machines/#automatic-registration
   machines = {
-    # jon = { config, ... }: {
-    #   environment.systemPackages = [ pkgs.asciinema ];
-    # };
     vimes = {
       config,
       pkgs,
       ...
     }: {
-      users.users.root.openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM+WzQti2XAEbUcQ48olNRJcleDeJ714fZX2bJulJPGu wessel@ultrapc"
-      ];
+      environment.etc."issue.d/ip.issue".text = "\\4\n";
+      networking.dhcpcd.runHook = "${pkgs.utillinux}/bin/agetty --reload";
+
+      services.garage = {
+        enable = true;
+        package = pkgs.garage_2_0_0;
+
+        settings = {
+          metadata_dir = "/var/lib/garage/meta";
+          data_dir = "/var/lib/garage/data";
+
+          replication_factor = 1;
+
+          rpc_bind_addr = "[::]:3901";
+          rpc_public_addr = "127.0.0.1:3901";
+
+          s3_api = {
+            api_bind_addr = "127.0.0.1:3900";
+            s3_region = "garage";
+            root_domain = ".s3.garage";
+          };
+
+          s3_web = {
+            bind_addr = "127.0.0.1:3902";
+            root_domain = ".web.garage";
+          };
+
+          admin = {
+            api_bind_addr = "127.0.0.1:3903";
+          };
+        };
+      };
+      services.avahi.enable = true;
     };
   };
 }

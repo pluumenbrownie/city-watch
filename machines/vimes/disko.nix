@@ -85,13 +85,6 @@
         type = "zpool";
         mode = "mirror";
         mountpoint = "/storage";
-
-        datasets = {
-          dataset = {
-            type = "zfs_fs";
-            mountpoint = "/storage/dataset";
-          };
-        };
       };
     };
   };
