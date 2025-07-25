@@ -6,7 +6,7 @@
     # Define machines here.
     vimes = {
       tags = ["commander"];
-      deploy.targetHost = "root@192.168.1.186";
+      deploy.targetHost = "root@192.168.1.180";
     };
   };
 
@@ -79,7 +79,7 @@
           };
 
           s3_web = {
-            bind_addr = "127.0.0.1:3902";
+            bind_addr = "[::]:3902";
             root_domain = ".web.garage";
           };
 
