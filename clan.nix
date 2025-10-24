@@ -1,6 +1,7 @@
 {
   # Ensure this is unique among all clans you want to use.
   meta.name = "city-watch";
+  meta.tld = "watch";
 
   inventory.machines = {
     # Define machines here.
