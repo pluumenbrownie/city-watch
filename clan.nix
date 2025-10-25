@@ -7,7 +7,6 @@
     # Define machines here.
     vimes = {
       tags = ["commander"];
-      deploy.targetHost = "root@192.168.1.180";
     };
   };
 
@@ -62,7 +61,7 @@
 
       services.garage = {
         enable = true;
-        package = pkgs.garage_2_0_0;
+        package = pkgs.garage_2;
 
         settings = {
           metadata_dir = "/var/lib/garage/meta";
