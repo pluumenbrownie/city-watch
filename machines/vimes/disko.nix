@@ -84,7 +84,8 @@
       storage = {
         type = "zpool";
         mode = "mirror";
-        mountpoint = "/storage";
+        # Workaround: cannot import 'zroot': I/O error in disko tests
+        options.cachefile = "none";
       };
     };
   };

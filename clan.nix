@@ -7,6 +7,7 @@
     # Define machines here.
     vimes = {
       tags = ["commander"];
+      deploy.targetHost = "root@192.168.1.183";
     };
   };
 
@@ -89,6 +90,12 @@
         };
       };
       services.avahi.enable = true;
+
+      boot.supportedFilesystems = ["zfs"];
+      boot.zfs = {
+        forceImportRoot = false;
+        extraPools = ["storage"];
+      };
     };
   };
 }

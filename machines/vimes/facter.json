@@ -644,7 +644,7 @@
         "fpu_exception": true,
         "cpuid_level": 22,
         "write_protect": false,
-        "tlb_size": 32766,
+        "tlb_size": 32760,
         "clflush_size": 64,
         "cache_alignment": 64,
         "address_sizes": {
@@ -790,8 +790,10 @@
         "unix_device_names": [
           "/dev/disk/by-id/ata-ST2000DM001-1E6164_W1E72CF2",
           "/dev/disk/by-id/wwn-0x5000c50072f1ae12",
+          "/dev/disk/by-label/storage",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-4",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-4.0",
+          "/dev/disk/by-uuid/2009606161698560677",
           "/dev/sdb"
         ],
         "resources": [
