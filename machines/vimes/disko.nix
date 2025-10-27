@@ -86,6 +86,15 @@
         mode = "mirror";
         # Workaround: cannot import 'zroot': I/O error in disko tests
         options.cachefile = "none";
+
+        datasets = {
+          garage = {
+            type = "zfs_fs";
+          };
+          other = {
+            type = "zfs_fs";
+          };
+        };
       };
     };
   };

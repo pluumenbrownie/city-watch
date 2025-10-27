@@ -644,7 +644,7 @@
         "fpu_exception": true,
         "cpuid_level": 22,
         "write_protect": false,
-        "tlb_size": 32760,
+        "tlb_size": 32749,
         "clflush_size": 64,
         "cache_alignment": 64,
         "address_sizes": {
@@ -759,7 +759,7 @@
           "value": 133
         },
         "slot": {
-          "bus": 3,
+          "bus": 5,
           "number": 0
         },
         "base_class": {
@@ -774,26 +774,24 @@
         },
         "device": {
           "hex": "0000",
-          "name": "ST2000DM001-1E61",
+          "name": "ST2000DM001-1CH1",
           "value": 0
         },
         "revision": {
           "hex": "0000",
-          "name": "SC48",
+          "name": "CC27",
           "value": 0
         },
-        "serial": "W1E72CF2",
-        "model": "ST2000DM001-1E61",
+        "serial": "Z1E85KQJ",
+        "model": "ST2000DM001-1CH1",
         "sysfs_id": "/class/block/sdb",
-        "sysfs_bus_id": "3:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata4/host3/target3:0:0/3:0:0:0",
+        "sysfs_bus_id": "5:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata6/host5/target5:0:0/5:0:0:0",
         "unix_device_names": [
-          "/dev/disk/by-id/ata-ST2000DM001-1E6164_W1E72CF2",
-          "/dev/disk/by-id/wwn-0x5000c50072f1ae12",
-          "/dev/disk/by-label/storage",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-4",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-4.0",
-          "/dev/disk/by-uuid/2009606161698560677",
+          "/dev/disk/by-id/ata-ST2000DM001-1CH164_Z1E85KQJ",
+          "/dev/disk/by-id/wwn-0x5000c500670f28ca",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-6",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-6.0",
           "/dev/sdb"
         ],
         "resources": [
@@ -837,7 +835,7 @@
           "value": 133
         },
         "slot": {
-          "bus": 5,
+          "bus": 2,
           "number": 0
         },
         "base_class": {
@@ -852,30 +850,30 @@
         },
         "device": {
           "hex": "0000",
-          "name": "ST2000DM001-1CH1",
+          "name": "Crucial_CT120M50",
           "value": 0
         },
         "revision": {
           "hex": "0000",
-          "name": "CC27",
+          "name": "MU05",
           "value": 0
         },
-        "serial": "Z1E85KQJ",
-        "model": "ST2000DM001-1CH1",
+        "serial": "14170C189EF5",
+        "model": "Crucial_CT120M50",
         "sysfs_id": "/class/block/sdc",
-        "sysfs_bus_id": "5:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata6/host5/target5:0:0/5:0:0:0",
+        "sysfs_bus_id": "2:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata3/host2/target2:0:0/2:0:0:0",
         "unix_device_names": [
-          "/dev/disk/by-id/ata-ST2000DM001-1CH164_Z1E85KQJ",
-          "/dev/disk/by-id/wwn-0x5000c500670f28ca",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-6",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-6.0",
+          "/dev/disk/by-id/ata-Crucial_CT120M500SSD1_14170C189EF5",
+          "/dev/disk/by-id/wwn-0x500a07510c189ef5",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-3",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-3.0",
           "/dev/sdc"
         ],
         "resources": [
           {
             "type": "disk_geo",
-            "cylinders": 243201,
+            "cylinders": 14593,
             "heads": 255,
             "sectors": 63,
             "size": "0x0",
@@ -884,7 +882,7 @@
           {
             "type": "size",
             "unit": "sectors",
-            "value_1": 3907029168,
+            "value_1": 234441648,
             "value_2": 512
           }
         ],
@@ -913,7 +911,7 @@
           "value": 133
         },
         "slot": {
-          "bus": 2,
+          "bus": 3,
           "number": 0
         },
         "base_class": {
@@ -928,30 +926,30 @@
         },
         "device": {
           "hex": "0000",
-          "name": "Crucial_CT120M50",
+          "name": "ST2000DM001-1E61",
           "value": 0
         },
         "revision": {
           "hex": "0000",
-          "name": "MU05",
+          "name": "SC48",
           "value": 0
         },
-        "serial": "14170C189EF5",
-        "model": "Crucial_CT120M50",
+        "serial": "W1E72CF2",
+        "model": "ST2000DM001-1E61",
         "sysfs_id": "/class/block/sda",
-        "sysfs_bus_id": "2:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata3/host2/target2:0:0/2:0:0:0",
+        "sysfs_bus_id": "3:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata4/host3/target3:0:0/3:0:0:0",
         "unix_device_names": [
-          "/dev/disk/by-id/ata-Crucial_CT120M500SSD1_14170C189EF5",
-          "/dev/disk/by-id/wwn-0x500a07510c189ef5",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-3",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-3.0",
+          "/dev/disk/by-id/ata-ST2000DM001-1E6164_W1E72CF2",
+          "/dev/disk/by-id/wwn-0x5000c50072f1ae12",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-4",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-4.0",
           "/dev/sda"
         ],
         "resources": [
           {
             "type": "disk_geo",
-            "cylinders": 14593,
+            "cylinders": 243201,
             "heads": 255,
             "sectors": 63,
             "size": "0x0",
@@ -960,7 +958,7 @@
           {
             "type": "size",
             "unit": "sectors",
-            "value_1": 234441648,
+            "value_1": 3907029168,
             "value_2": 512
           }
         ],
@@ -1890,28 +1888,6 @@
     "network_interface": [
       {
         "index": 42,
-        "attached_to": 0,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_names": [
-          "lo"
-        ]
-      },
-      {
-        "index": 43,
         "attached_to": 23,
         "class_list": [
           "network_interface"
@@ -1949,6 +1925,28 @@
         ],
         "driver_modules": [
           "e1000e"
+        ]
+      },
+      {
+        "index": 43,
+        "attached_to": 0,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Loopback",
+          "value": 0
+        },
+        "model": "Loopback network interface",
+        "sysfs_id": "/class/net/lo",
+        "unix_device_names": [
+          "lo"
         ]
       }
     ],
