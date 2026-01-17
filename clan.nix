@@ -7,7 +7,7 @@
   inventory.machines = {
     vimes = {
       tags = ["commander"];
-      deploy.targetHost = "root@192.168.1.183";
+      deploy.targetHost = "root@192.168.1.184";
     };
   };
 

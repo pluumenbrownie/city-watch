@@ -3,6 +3,11 @@
   boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.grub.enable = true;
 
+  boot.zfs = {
+    extraPools = ["ssd" "storage"];
+    devNodes = "/dev/disk/by-partuuid";
+  };
+
   disko.devices = {
     disk = {
       ssd = {
@@ -63,7 +68,7 @@
               size = "100%";
               content = {
                 type = "zfs";
-                pool = "storage";
+                pool = "hdd";
               };
             };
           };
@@ -80,7 +85,7 @@
               size = "100%";
               content = {
                 type = "zfs";
-                pool = "storage";
+                pool = "hdd";
               };
             };
           };
@@ -88,7 +93,7 @@
       };
     };
     zpool = {
-      storage = {
+      hdd = {
         type = "zpool";
         mode = "mirror";
         # Workaround: cannot import 'zroot': I/O error in disko tests
