@@ -28,11 +28,18 @@
               };
             };
             root = {
-              end = "-4G";
+              size = "80G";
               content = {
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
+              };
+            };
+            ssd = {
+              end = "-4G";
+              content = {
+                type = "zfs";
+                pool = "ssd";
               };
             };
             swap = {
@@ -88,11 +95,21 @@
         options.cachefile = "none";
 
         datasets = {
-          garage = {
+          storage = {
             type = "zfs_fs";
+            mountpoint = "/storage";
           };
-          other = {
+        };
+      };
+      ssd = {
+        type = "zpool";
+        # Workaround: cannot import 'zroot': I/O error in disko tests
+        options.cachefile = "none";
+
+        datasets = {
+          home = {
             type = "zfs_fs";
+            mountpoint = "/home";
           };
         };
       };

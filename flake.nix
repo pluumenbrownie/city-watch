@@ -14,6 +14,8 @@
       imports = [./clan.nix];
       specialArgs = {inherit inputs;};
     };
+
+    pkgs = nixpkgs.legacyPackages."x86_64-linux";
   in {
     inherit (clan.config) nixosConfigurations nixosModules clanInternals;
     clan = clan.config;
@@ -29,7 +31,10 @@
       ]
       (system: {
         default = clan-core.inputs.nixpkgs.legacyPackages.${system}.mkShell {
-          packages = [clan-core.packages.${system}.clan-cli];
+          packages = [
+            clan-core.packages.${system}.clan-cli
+            pkgs.disko
+          ];
         };
       });
   };

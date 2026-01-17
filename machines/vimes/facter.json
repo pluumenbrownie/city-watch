@@ -504,6 +504,7 @@
       {
         "architecture": "x86_64",
         "vendor_name": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
         "family": 6,
         "model": 94,
         "stepping": 3,
@@ -634,17 +635,21 @@
           "old_microcode",
           "vmscape"
         ],
+        "power_management": [
+          ""
+        ],
         "bogo": 7999,
         "cache": 8192,
         "units": 16,
+        "page_size": 4096,
         "physical_id": 0,
         "siblings": 8,
         "cores": 4,
-        "fpu": true,
-        "fpu_exception": true,
+        "fpu": false,
+        "fpu_exception": false,
         "cpuid_level": 22,
         "write_protect": false,
-        "tlb_size": 32749,
+        "tlb_size": 32663,
         "clflush_size": 64,
         "cache_alignment": 64,
         "address_sizes": {
@@ -656,7 +661,7 @@
     "disk": [
       {
         "index": 30,
-        "attached_to": 17,
+        "attached_to": 25,
         "class_list": [
           "disk",
           "usb",
@@ -701,11 +706,11 @@
         "model": "Imation Nano",
         "sysfs_id": "/class/block/sdd",
         "sysfs_bus_id": "6:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:1c.0/0000:02:00.0/usb3/3-2/3-2:1.0/host6/target6:0:0/6:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.0/host6/target6:0:0/6:0:0:0",
         "unix_device_names": [
           "/dev/disk/by-id/usb-Imation_Nano_07970803A7070779-0:0",
-          "/dev/disk/by-path/pci-0000:02:00.0-usb-0:2:1.0-scsi-0:0:0:0",
-          "/dev/disk/by-path/pci-0000:02:00.0-usbv2-0:2:1.0-scsi-0:0:0:0",
+          "/dev/disk/by-path/pci-0000:00:14.0-usb-0:6:1.0-scsi-0:0:0:0",
+          "/dev/disk/by-path/pci-0000:00:14.0-usbv2-0:6:1.0-scsi-0:0:0:0",
           "/dev/sdd"
         ],
         "unix_device_name2": "/dev/sg3",
@@ -759,82 +764,6 @@
           "value": 133
         },
         "slot": {
-          "bus": 5,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0106",
-          "name": "Mass Storage Device",
-          "value": 262
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Disk",
-          "value": 0
-        },
-        "device": {
-          "hex": "0000",
-          "name": "ST2000DM001-1CH1",
-          "value": 0
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "CC27",
-          "value": 0
-        },
-        "serial": "Z1E85KQJ",
-        "model": "ST2000DM001-1CH1",
-        "sysfs_id": "/class/block/sdb",
-        "sysfs_bus_id": "5:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata6/host5/target5:0:0/5:0:0:0",
-        "unix_device_names": [
-          "/dev/disk/by-id/ata-ST2000DM001-1CH164_Z1E85KQJ",
-          "/dev/disk/by-id/wwn-0x5000c500670f28ca",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-6",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-6.0",
-          "/dev/sdb"
-        ],
-        "resources": [
-          {
-            "type": "disk_geo",
-            "cylinders": 243201,
-            "heads": 255,
-            "sectors": 63,
-            "size": "0x0",
-            "geo_type": "logical"
-          },
-          {
-            "type": "size",
-            "unit": "sectors",
-            "value_1": 3907029168,
-            "value_2": 512
-          }
-        ],
-        "driver": "ahci",
-        "driver_module": "ahci",
-        "drivers": [
-          "ahci",
-          "sd"
-        ],
-        "driver_modules": [
-          "ahci",
-          "sd_mod"
-        ]
-      },
-      {
-        "index": 32,
-        "attached_to": 13,
-        "class_list": [
-          "disk",
-          "ide",
-          "block_device"
-        ],
-        "bus_type": {
-          "hex": "0085",
-          "name": "IDE",
-          "value": 133
-        },
-        "slot": {
           "bus": 2,
           "number": 0
         },
@@ -860,7 +789,7 @@
         },
         "serial": "14170C189EF5",
         "model": "Crucial_CT120M50",
-        "sysfs_id": "/class/block/sdc",
+        "sysfs_id": "/class/block/sdb",
         "sysfs_bus_id": "2:0:0:0",
         "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata3/host2/target2:0:0/2:0:0:0",
         "unix_device_names": [
@@ -868,7 +797,7 @@
           "/dev/disk/by-id/wwn-0x500a07510c189ef5",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-3",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-3.0",
-          "/dev/sdc"
+          "/dev/sdb"
         ],
         "resources": [
           {
@@ -898,7 +827,7 @@
         ]
       },
       {
-        "index": 33,
+        "index": 32,
         "attached_to": 13,
         "class_list": [
           "disk",
@@ -936,7 +865,7 @@
         },
         "serial": "W1E72CF2",
         "model": "ST2000DM001-1E61",
-        "sysfs_id": "/class/block/sda",
+        "sysfs_id": "/class/block/sdc",
         "sysfs_bus_id": "3:0:0:0",
         "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata4/host3/target3:0:0/3:0:0:0",
         "unix_device_names": [
@@ -944,6 +873,82 @@
           "/dev/disk/by-id/wwn-0x5000c50072f1ae12",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-4",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-4.0",
+          "/dev/sdc"
+        ],
+        "resources": [
+          {
+            "type": "disk_geo",
+            "cylinders": 243201,
+            "heads": 255,
+            "sectors": 63,
+            "size": "0x0",
+            "geo_type": "logical"
+          },
+          {
+            "type": "size",
+            "unit": "sectors",
+            "value_1": 3907029168,
+            "value_2": 512
+          }
+        ],
+        "driver": "ahci",
+        "driver_module": "ahci",
+        "drivers": [
+          "ahci",
+          "sd"
+        ],
+        "driver_modules": [
+          "ahci",
+          "sd_mod"
+        ]
+      },
+      {
+        "index": 33,
+        "attached_to": 13,
+        "class_list": [
+          "disk",
+          "ide",
+          "block_device"
+        ],
+        "bus_type": {
+          "hex": "0085",
+          "name": "IDE",
+          "value": 133
+        },
+        "slot": {
+          "bus": 5,
+          "number": 0
+        },
+        "base_class": {
+          "hex": "0106",
+          "name": "Mass Storage Device",
+          "value": 262
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Disk",
+          "value": 0
+        },
+        "device": {
+          "hex": "0000",
+          "name": "ST2000DM001-1CH1",
+          "value": 0
+        },
+        "revision": {
+          "hex": "0000",
+          "name": "CC27",
+          "value": 0
+        },
+        "serial": "Z1E85KQJ",
+        "model": "ST2000DM001-1CH1",
+        "sysfs_id": "/class/block/sda",
+        "sysfs_bus_id": "5:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata6/host5/target5:0:0/5:0:0:0",
+        "unix_device_names": [
+          "/dev/disk/by-id/ata-ST2000DM001-1CH164_Z1E85KQJ",
+          "/dev/disk/by-id/wwn-0x5000c500670f28ca",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-6",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-6.0",
           "/dev/sda"
         ],
         "resources": [
@@ -1082,7 +1087,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.17.0 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1092,11 +1097,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.17",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:02:00.0",
-        "model": "Linux 6.17.0 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:1c.0/0000:02:00.0/usb3/3-0:1.0",
         "sysfs_bus_id": "3-0:1.0",
         "resources": [
@@ -1144,7 +1149,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0002d0617dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
         "index": 37,
@@ -1169,7 +1174,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.17.0 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1179,11 +1184,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.17",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:02:00.0",
-        "model": "Linux 6.17.0 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:1c.0/0000:02:00.0/usb4/4-0:1.0",
         "sysfs_bus_id": "4-0:1.0",
         "detail": {
@@ -1221,7 +1226,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0003d0617dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       },
       {
         "index": 38,
@@ -1246,7 +1251,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.17.0 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1256,11 +1261,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.17",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:00:14.0",
-        "model": "Linux 6.17.0 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -1308,10 +1313,10 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0002d0617dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 41,
+        "index": 40,
         "attached_to": 25,
         "class_list": [
           "usb",
@@ -1333,7 +1338,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.17.0 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1343,11 +1348,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.17",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:00:14.0",
-        "model": "Linux 6.17.0 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
@@ -1385,12 +1390,12 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0003d0617dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       }
     ],
     "keyboard": [
       {
-        "index": 34,
+        "index": 41,
         "attached_to": 38,
         "class_list": [
           "keyboard",
@@ -1431,12 +1436,12 @@
           "value": 0
         },
         "model": "Microsoft® 2.4GHz Transceiver v8.0",
-        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9:1.0",
-        "sysfs_bus_id": "1-9:1.0",
+        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-5/1-5:1.0",
+        "sysfs_bus_id": "1-5:1.0",
         "unix_device_names": [
           "/dev/input/by-id/usb-Microsoft_Microsoft®_2.4GHz_Transceiver_v8.0-event-kbd",
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:9:1.0-event-kbd",
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:9:1.0-event-kbd",
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.0-event-kbd",
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:5:1.0-event-kbd",
           "/dev/input/event0"
         ],
         "resources": [
@@ -1738,8 +1743,8 @@
         "compat_vendor": "Unknown",
         "compat_device": "Generic USB Mouse",
         "model": "Microsoft® 2.4GHz Transceiver v8.0",
-        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9:1.1",
-        "sysfs_bus_id": "1-9:1.1",
+        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-5/1-5:1.1",
+        "sysfs_bus_id": "1-5:1.1",
         "unix_device_names": [
           "/dev/input/mice"
         ],
@@ -2364,7 +2369,7 @@
     ],
     "usb": [
       {
-        "index": 40,
+        "index": 39,
         "attached_to": 38,
         "class_list": [
           "usb",
@@ -2405,12 +2410,12 @@
           "value": 0
         },
         "model": "Microsoft® 2.4GHz Transceiver v8.0",
-        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9:1.2",
-        "sysfs_bus_id": "1-9:1.2",
+        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-5/1-5:1.2",
+        "sysfs_bus_id": "1-5:1.2",
         "unix_device_names": [
           "/dev/input/by-id/usb-Microsoft_Microsoft®_2.4GHz_Transceiver_v8.0-if02-event-kbd",
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:9:1.2-event-kbd",
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:9:1.2-event-kbd",
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.2-event-kbd",
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:5:1.2-event-kbd",
           "/dev/input/event3"
         ],
         "resources": [
