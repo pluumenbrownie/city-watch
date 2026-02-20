@@ -649,7 +649,7 @@
         "fpu_exception": false,
         "cpuid_level": 22,
         "write_protect": false,
-        "tlb_size": 32663,
+        "tlb_size": 32513,
         "clflush_size": 64,
         "cache_alignment": 64,
         "address_sizes": {
@@ -706,11 +706,11 @@
         "model": "Imation Nano",
         "sysfs_id": "/class/block/sdd",
         "sysfs_bus_id": "6:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.0/host6/target6:0:0/6:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:14.0/usb1/1-5/1-5:1.0/host6/target6:0:0/6:0:0:0",
         "unix_device_names": [
           "/dev/disk/by-id/usb-Imation_Nano_07970803A7070779-0:0",
-          "/dev/disk/by-path/pci-0000:00:14.0-usb-0:6:1.0-scsi-0:0:0:0",
-          "/dev/disk/by-path/pci-0000:00:14.0-usbv2-0:6:1.0-scsi-0:0:0:0",
+          "/dev/disk/by-path/pci-0000:00:14.0-usb-0:5:1.0-scsi-0:0:0:0",
+          "/dev/disk/by-path/pci-0000:00:14.0-usbv2-0:5:1.0-scsi-0:0:0:0",
           "/dev/sdd"
         ],
         "unix_device_name2": "/dev/sg3",
@@ -764,7 +764,7 @@
           "value": 133
         },
         "slot": {
-          "bus": 2,
+          "bus": 5,
           "number": 0
         },
         "base_class": {
@@ -779,30 +779,30 @@
         },
         "device": {
           "hex": "0000",
-          "name": "Crucial_CT120M50",
+          "name": "ST2000DM001-1CH1",
           "value": 0
         },
         "revision": {
           "hex": "0000",
-          "name": "MU05",
+          "name": "CC27",
           "value": 0
         },
-        "serial": "14170C189EF5",
-        "model": "Crucial_CT120M50",
+        "serial": "Z1E85KQJ",
+        "model": "ST2000DM001-1CH1",
         "sysfs_id": "/class/block/sdb",
-        "sysfs_bus_id": "2:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata3/host2/target2:0:0/2:0:0:0",
+        "sysfs_bus_id": "5:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata6/host5/target5:0:0/5:0:0:0",
         "unix_device_names": [
-          "/dev/disk/by-id/ata-Crucial_CT120M500SSD1_14170C189EF5",
-          "/dev/disk/by-id/wwn-0x500a07510c189ef5",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-3",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-3.0",
+          "/dev/disk/by-id/ata-ST2000DM001-1CH164_Z1E85KQJ",
+          "/dev/disk/by-id/wwn-0x5000c500670f28ca",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-6",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-6.0",
           "/dev/sdb"
         ],
         "resources": [
           {
             "type": "disk_geo",
-            "cylinders": 14593,
+            "cylinders": 243201,
             "heads": 255,
             "sectors": 63,
             "size": "0x0",
@@ -811,7 +811,7 @@
           {
             "type": "size",
             "unit": "sectors",
-            "value_1": 234441648,
+            "value_1": 3907029168,
             "value_2": 512
           }
         ],
@@ -916,7 +916,7 @@
           "value": 133
         },
         "slot": {
-          "bus": 5,
+          "bus": 2,
           "number": 0
         },
         "base_class": {
@@ -931,30 +931,30 @@
         },
         "device": {
           "hex": "0000",
-          "name": "ST2000DM001-1CH1",
+          "name": "Crucial_CT120M50",
           "value": 0
         },
         "revision": {
           "hex": "0000",
-          "name": "CC27",
+          "name": "MU05",
           "value": 0
         },
-        "serial": "Z1E85KQJ",
-        "model": "ST2000DM001-1CH1",
+        "serial": "14170C189EF5",
+        "model": "Crucial_CT120M50",
         "sysfs_id": "/class/block/sda",
-        "sysfs_bus_id": "5:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata6/host5/target5:0:0/5:0:0:0",
+        "sysfs_bus_id": "2:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata3/host2/target2:0:0/2:0:0:0",
         "unix_device_names": [
-          "/dev/disk/by-id/ata-ST2000DM001-1CH164_Z1E85KQJ",
-          "/dev/disk/by-id/wwn-0x5000c500670f28ca",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-6",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-6.0",
+          "/dev/disk/by-id/ata-Crucial_CT120M500SSD1_14170C189EF5",
+          "/dev/disk/by-id/wwn-0x500a07510c189ef5",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-3",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-3.0",
           "/dev/sda"
         ],
         "resources": [
           {
             "type": "disk_geo",
-            "cylinders": 243201,
+            "cylinders": 14593,
             "heads": 255,
             "sectors": 63,
             "size": "0x0",
@@ -963,7 +963,7 @@
           {
             "type": "size",
             "unit": "sectors",
-            "value_1": 3907029168,
+            "value_1": 234441648,
             "value_2": 512
           }
         ],
@@ -1395,7 +1395,7 @@
     ],
     "keyboard": [
       {
-        "index": 41,
+        "index": 34,
         "attached_to": 38,
         "class_list": [
           "keyboard",
@@ -1436,12 +1436,12 @@
           "value": 0
         },
         "model": "Microsoft® 2.4GHz Transceiver v8.0",
-        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-5/1-5:1.0",
-        "sysfs_bus_id": "1-5:1.0",
+        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9:1.0",
+        "sysfs_bus_id": "1-9:1.0",
         "unix_device_names": [
           "/dev/input/by-id/usb-Microsoft_Microsoft®_2.4GHz_Transceiver_v8.0-event-kbd",
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.0-event-kbd",
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:5:1.0-event-kbd",
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:9:1.0-event-kbd",
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:9:1.0-event-kbd",
           "/dev/input/event0"
         ],
         "resources": [
@@ -1743,8 +1743,8 @@
         "compat_vendor": "Unknown",
         "compat_device": "Generic USB Mouse",
         "model": "Microsoft® 2.4GHz Transceiver v8.0",
-        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-5/1-5:1.1",
-        "sysfs_bus_id": "1-5:1.1",
+        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9:1.1",
+        "sysfs_bus_id": "1-9:1.1",
         "unix_device_names": [
           "/dev/input/mice"
         ],
@@ -2410,12 +2410,12 @@
           "value": 0
         },
         "model": "Microsoft® 2.4GHz Transceiver v8.0",
-        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-5/1-5:1.2",
-        "sysfs_bus_id": "1-5:1.2",
+        "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9:1.2",
+        "sysfs_bus_id": "1-9:1.2",
         "unix_device_names": [
           "/dev/input/by-id/usb-Microsoft_Microsoft®_2.4GHz_Transceiver_v8.0-if02-event-kbd",
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.2-event-kbd",
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:5:1.2-event-kbd",
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:9:1.2-event-kbd",
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:9:1.2-event-kbd",
           "/dev/input/event3"
         ],
         "resources": [
