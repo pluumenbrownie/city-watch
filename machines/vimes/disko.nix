@@ -103,6 +103,7 @@
           storage = {
             type = "zfs_fs";
             mountpoint = "/storage";
+            options.mountpoint = "legacy";
           };
         };
       };
@@ -115,10 +116,12 @@
           home = {
             type = "zfs_fs";
             mountpoint = "/home";
+            options.mountpoint = "legacy";
           };
           var = {
             type = "zfs_fs";
             mountpoint = "/var";
+            options.mountpoint = "legacy";
           };
         };
       };
