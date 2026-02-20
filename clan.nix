@@ -2,7 +2,7 @@
 {
   # Ensure this is unique among all clans you want to use.
   meta.name = "city-watch";
-  meta.tld = "watch";
+  meta.domain = "watch";
 
   inventory.machines = {
     vimes = {
