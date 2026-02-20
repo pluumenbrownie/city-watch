@@ -767,82 +767,6 @@
           "value": 133
         },
         "slot": {
-          "bus": 3,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0106",
-          "name": "Mass Storage Device",
-          "value": 262
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Disk",
-          "value": 0
-        },
-        "device": {
-          "hex": "0000",
-          "name": "ST2000DM001-1E61",
-          "value": 0
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "SC48",
-          "value": 0
-        },
-        "serial": "W1E72CF2",
-        "model": "ST2000DM001-1E61",
-        "sysfs_id": "/class/block/sdb",
-        "sysfs_bus_id": "3:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata4/host3/target3:0:0/3:0:0:0",
-        "unix_device_names": [
-          "/dev/disk/by-id/ata-ST2000DM001-1E6164_W1E72CF2",
-          "/dev/disk/by-id/wwn-0x5000c50072f1ae12",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-4",
-          "/dev/disk/by-path/pci-0000:00:17.0-ata-4.0",
-          "/dev/sdb"
-        ],
-        "resources": [
-          {
-            "type": "disk_geo",
-            "cylinders": 243201,
-            "heads": 255,
-            "sectors": 63,
-            "size": "0x0",
-            "geo_type": "logical"
-          },
-          {
-            "type": "size",
-            "unit": "sectors",
-            "value_1": 3907029168,
-            "value_2": 512
-          }
-        ],
-        "driver": "ahci",
-        "driver_module": "ahci",
-        "drivers": [
-          "ahci",
-          "sd"
-        ],
-        "driver_modules": [
-          "ahci",
-          "sd_mod"
-        ]
-      },
-      {
-        "index": 32,
-        "attached_to": 13,
-        "class_list": [
-          "disk",
-          "ide",
-          "block_device"
-        ],
-        "bus_type": {
-          "hex": "0085",
-          "name": "IDE",
-          "value": 133
-        },
-        "slot": {
           "bus": 2,
           "number": 0
         },
@@ -868,7 +792,7 @@
         },
         "serial": "14170C189EF5",
         "model": "Crucial_CT120M50",
-        "sysfs_id": "/class/block/sdc",
+        "sysfs_id": "/class/block/sdb",
         "sysfs_bus_id": "2:0:0:0",
         "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata3/host2/target2:0:0/2:0:0:0",
         "unix_device_names": [
@@ -876,7 +800,7 @@
           "/dev/disk/by-id/wwn-0x500a07510c189ef5",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-3",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-3.0",
-          "/dev/sdc"
+          "/dev/sdb"
         ],
         "resources": [
           {
@@ -906,7 +830,7 @@
         ]
       },
       {
-        "index": 33,
+        "index": 32,
         "attached_to": 13,
         "class_list": [
           "disk",
@@ -944,7 +868,7 @@
         },
         "serial": "Z1E85KQJ",
         "model": "ST2000DM001-1CH1",
-        "sysfs_id": "/class/block/sda",
+        "sysfs_id": "/class/block/sdc",
         "sysfs_bus_id": "5:0:0:0",
         "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata6/host5/target5:0:0/5:0:0:0",
         "unix_device_names": [
@@ -952,6 +876,82 @@
           "/dev/disk/by-id/wwn-0x5000c500670f28ca",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-6",
           "/dev/disk/by-path/pci-0000:00:17.0-ata-6.0",
+          "/dev/sdc"
+        ],
+        "resources": [
+          {
+            "type": "disk_geo",
+            "cylinders": 243201,
+            "heads": 255,
+            "sectors": 63,
+            "size": "0x0",
+            "geo_type": "logical"
+          },
+          {
+            "type": "size",
+            "unit": "sectors",
+            "value_1": 3907029168,
+            "value_2": 512
+          }
+        ],
+        "driver": "ahci",
+        "driver_module": "ahci",
+        "drivers": [
+          "ahci",
+          "sd"
+        ],
+        "driver_modules": [
+          "ahci",
+          "sd_mod"
+        ]
+      },
+      {
+        "index": 33,
+        "attached_to": 13,
+        "class_list": [
+          "disk",
+          "ide",
+          "block_device"
+        ],
+        "bus_type": {
+          "hex": "0085",
+          "name": "IDE",
+          "value": 133
+        },
+        "slot": {
+          "bus": 3,
+          "number": 0
+        },
+        "base_class": {
+          "hex": "0106",
+          "name": "Mass Storage Device",
+          "value": 262
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Disk",
+          "value": 0
+        },
+        "device": {
+          "hex": "0000",
+          "name": "ST2000DM001-1E61",
+          "value": 0
+        },
+        "revision": {
+          "hex": "0000",
+          "name": "SC48",
+          "value": 0
+        },
+        "serial": "W1E72CF2",
+        "model": "ST2000DM001-1E61",
+        "sysfs_id": "/class/block/sda",
+        "sysfs_bus_id": "3:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:17.0/ata4/host3/target3:0:0/3:0:0:0",
+        "unix_device_names": [
+          "/dev/disk/by-id/ata-ST2000DM001-1E6164_W1E72CF2",
+          "/dev/disk/by-id/wwn-0x5000c50072f1ae12",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-4",
+          "/dev/disk/by-path/pci-0000:00:17.0-ata-4.0",
           "/dev/sda"
         ],
         "resources": [
