@@ -30,6 +30,20 @@
       environment.etc."issue.d/ip.issue".text = "\\4\n";
       networking.dhcpcd.runHook = "${pkgs.utillinux}/bin/agetty --reload";
 
+      users.users = {
+        postgres = {
+          isSystemUser = true;
+          extraGroups = ["wheel"];
+        };
+      };
+
+      # https://www.man7.org/linux/man-pages/man5/tmpfiles.d.5.html
+      # https://askubuntu.com/questions/581290/what-is-the-first-number-for-in-a-4-number-chmod-argument-such-as-chmod-4555
+      # https://unix.stackexchange.com/questions/577075/can-i-find-under-which-user-is-a-service-running-via-systemctl-command
+      systemd.tmpfiles.rules = [
+        "d /storage/postgresql/15 0774 postgres postgres"
+      ];
+
       services = {
         hedgedoc = {
           enable = true;
