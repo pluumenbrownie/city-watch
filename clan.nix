@@ -7,7 +7,7 @@
   inventory.machines = {
     vimes = {
       tags = ["commander"];
-      deploy.targetHost = "root@192.168.1.184";
+      deploy.targetHost = "root@192.168.1.180";
     };
   };
 
@@ -29,6 +29,16 @@
     vimes = {pkgs, ...}: {
       environment.etc."issue.d/ip.issue".text = "\\4\n";
       networking.dhcpcd.runHook = "${pkgs.utillinux}/bin/agetty --reload";
+
+      services = {
+        hedgedoc = {
+          enable = true;
+        };
+        postgresql = {
+          enable = true;
+          dataDir = "/storage/postgresql/15";
+        };
+      };
     };
   };
 }

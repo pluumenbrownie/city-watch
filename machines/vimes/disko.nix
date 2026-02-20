@@ -116,6 +116,10 @@
             type = "zfs_fs";
             mountpoint = "/home";
           };
+          var = {
+            type = "zfs_fs";
+            mountpoint = "/var";
+          };
         };
       };
     };
