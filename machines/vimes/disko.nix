@@ -4,8 +4,8 @@
   boot.loader.grub.enable = true;
 
   boot.zfs = {
-    extraPools = ["ssd" "storage"];
-    devNodes = "/dev/disk/by-partuuid";
+    extraPools = ["ssd" "hdd"];
+    devNodes = "/dev/disk/by-id";
   };
 
   disko.devices = {
