@@ -23,6 +23,10 @@
       roles.controller.machines."vimes" = {};
       roles.peer.tags.all = {};
     };
+
+    garage = {
+      roles.default.machines."server" = {};
+    };
   };
 
   machines = {
@@ -30,11 +34,9 @@
       imports = [
         ./services/postgres.nix
         ./services/hedgedoc.nix
+        # ./services/garage.nix
+        ./modules
       ];
-
-      environment.etc."issue.d/ip.issue".text = "\\4\n";
-      networking.dhcpcd.runHook = "${pkgs.utillinux}/bin/agetty --reload";
-      time.timeZone = "Europe/Amsterdam";
     };
   };
 }
