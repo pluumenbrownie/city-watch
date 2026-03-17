@@ -30,8 +30,8 @@
             host = "/run/postgresql";
             dialect = "postgresql";
           };
-          domain = "192.168.1.183:3000";
-          host = "192.168.1.183";
+          domain = "192.168.1.180:3000";
+          host = "192.168.1.180";
           # protocolUseSSL = true;
           uploadsPath = config.storageDirs.hedgedocUploads.fullPath;
         };
