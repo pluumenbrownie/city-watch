@@ -37,6 +37,7 @@
         ./services/garage.nix
         ./wrappedPackages
         ./modules
+        ./utils
       ];
     };
   };

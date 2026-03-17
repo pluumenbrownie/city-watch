@@ -4,20 +4,13 @@
   ...
 }: {
   config = {
-    users.users = {
-      garage = {
-        isSystemUser = true;
-        extraGroups = ["wheel"];
-        group = "garage";
+    storageDirs = {
+      garageData = {
+        user = "garage";
+        path = "data";
+        wheelAccess = true;
       };
     };
-    users.groups = {
-      garage = {};
-    };
-
-    systemd.tmpfiles.rules = [
-      "d /storage/garage/data 0700 garage garage"
-    ];
 
     environment.systemPackages = [config.wrappedPackages.garage];
     services.garage = {
@@ -27,7 +20,7 @@
         data_dir = [
           {
             capacity = "2T";
-            path = "/storage/garage/data";
+            path = config.storageDirs.garageData.fullPath;
           }
         ];
         db_engine = "sqlite";

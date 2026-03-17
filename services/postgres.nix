@@ -11,25 +11,17 @@
     };
   };
   config = {
-    users.users = {
-      postgres = {
-        isSystemUser = true;
-        extraGroups = ["wheel"];
-        group = "postgres";
+    storageDirs = {
+      postgres15 = {
+        user = "postgres";
+        path = "postgresql/15";
+        wheelAccess = true;
       };
     };
-    users.groups = {
-      postgres = {};
-    };
-
-    systemd.tmpfiles.rules = [
-      # https://dba.stackexchange.com/questions/299080/failed-to-access-postgres-data-directory-on-vm
-      "d /storage/postgresql/15 0700 postgres postgres"
-    ];
 
     services.postgresql = {
       enable = true;
-      dataDir = "/storage/postgresql/15";
+      dataDir = config.storageDirs.postgres15.fullPath;
       ensureUsers =
         map (name: {
           name = name;
