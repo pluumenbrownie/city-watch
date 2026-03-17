@@ -1,14 +1,13 @@
 {
   inputs.clan-core.url = "https://git.clan.lol/clan/clan-core/archive/main.tar.gz";
   inputs.nixpkgs.follows = "clan-core/nixpkgs";
-  inputs.wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
+  inputs.wrappers.url = "github:Lassulus/wrappers";
   inputs.wrappers.inputs.wrappers.follows = "clan-core/nixpkgs";
 
   outputs = {
     self,
     clan-core,
     nixpkgs,
-    wrappers,
     ...
   } @ inputs: let
     # Usage see: https://docs.clan.lol

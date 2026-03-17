@@ -1,29 +1,27 @@
-{pkgs, ...}: let
-  garage = {
-    pkgs,
-    wrappers,
-    ...
-  }:
-    wrappers.lib.wrapPackage
-    ({
-      config,
-      wlib,
-      lib,
-      ...
-    }: {
-      inherit pkgs;
-      package = pkgs.garage;
-      env = {
-        GARAGE_ALLOW_WORLD_READABLE_SECRETS = "true";
-        GARAGE_RPC_SECRET_FILE = "${config.clan.core.vars.generators.garage-shared.files.rpc_secret.path}";
-        GARAGE_ADMIN_TOKEN_FILE = "${config.clan.core.vars.generators.garage.files.admin_token.path}";
-        GARAGE_METRICS_TOKEN_FILE = "${config.clan.core.vars.generators.garage.files.metrics_token.path}";
-      };
-    }).config.wrap {inherit pkgs;};
-in {
+{
+  config,
+  pkgs,
+  ...
+}: {
   config = {
-    environment.systemPackages = [garage];
+    users.users = {
+      garage = {
+        isSystemUser = true;
+        extraGroups = ["wheel"];
+        group = "garage";
+      };
+    };
+    users.groups = {
+      garage = {};
+    };
+
+    systemd.tmpfiles.rules = [
+      "d /storage/garage/data 0700 garage garage"
+    ];
+
+    environment.systemPackages = [config.wrappedPackages.garage];
     services.garage = {
+      enable = true;
       package = pkgs.garage_2;
       settings = {
         data_dir = [
