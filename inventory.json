@@ -2,6 +2,9 @@
   "machines": {
     "vimes": {
       "installedAt": 1771616752
+    },
+    "carrot": {
+      "installedAt": 1774480526
     }
   }
 }
