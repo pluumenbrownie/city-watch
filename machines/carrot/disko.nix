@@ -1,0 +1,130 @@
+{
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.efiInstallAsRemovable = true;
+  boot.loader.grub.enable = true;
+
+  boot.zfs = {
+    extraPools = ["ssd" "hdd"];
+    devNodes = "/dev/disk/by-id";
+  };
+
+  disko.devices = {
+    disk = {
+      ssd = {
+        name = "root-ssd";
+        type = "disk";
+        device = "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB2KB06290J";
+        content = {
+          type = "gpt";
+          partitions = {
+            "boot" = {
+              size = "1M";
+              type = "EF02"; # for grub MBR
+              priority = 1;
+            };
+            ESP = {
+              type = "EF00";
+              size = "500M";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = ["umask=0077"];
+              };
+            };
+            root = {
+              size = "80G";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/";
+              };
+            };
+            ssd = {
+              end = "-4G";
+              content = {
+                type = "zfs";
+                pool = "ssd";
+              };
+            };
+            swap = {
+              size = "100%";
+              content = {
+                type = "swap";
+                discardPolicy = "both";
+              };
+            };
+          };
+        };
+      };
+      storage1 = {
+        name = "storage-hdd-1";
+        type = "disk";
+        device = "/dev/disk/by-id/ata-OCZ-VERTEX3_OCZ-GRC6EU657PBHT1EI";
+        content = {
+          type = "gpt";
+          partitions = {
+            zfs = {
+              size = "100%";
+              content = {
+                type = "zfs";
+                pool = "hdd";
+              };
+            };
+          };
+        };
+      };
+      # storage2 = {
+      #   name = "storage-hdd-2";
+      #   type = "disk";
+      #   device = "/dev/disk/by-id/ata-ST2000DM001-1CH164_Z1E85KQJ";
+      #   content = {
+      #     type = "gpt";
+      #     partitions = {
+      #       zfs = {
+      #         size = "100%";
+      #         content = {
+      #           type = "zfs";
+      #           pool = "hdd";
+      #         };
+      #       };
+      #     };
+      #   };
+      # };
+    };
+    zpool = {
+      hdd = {
+        type = "zpool";
+        mode = "";
+        # Workaround: cannot import 'zroot': I/O error in disko tests
+        options.cachefile = "none";
+
+        datasets = {
+          storage = {
+            type = "zfs_fs";
+            mountpoint = "/storage";
+            options.mountpoint = "legacy";
+          };
+        };
+      };
+      ssd = {
+        type = "zpool";
+        # Workaround: cannot import 'zroot': I/O error in disko tests
+        options.cachefile = "none";
+
+        datasets = {
+          home = {
+            type = "zfs_fs";
+            mountpoint = "/home";
+            options.mountpoint = "legacy";
+          };
+          var = {
+            type = "zfs_fs";
+            mountpoint = "/var";
+            options.mountpoint = "legacy";
+          };
+        };
+      };
+    };
+  };
+}

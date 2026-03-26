@@ -9,6 +9,10 @@
       tags = ["commander"];
       deploy.targetHost = "root@192.168.1.180";
     };
+    carrot = {
+      tags = ["captain"];
+      deploy.targetHost = "root@192.168.1.163";
+    };
   };
 
   inventory.instances = {
@@ -26,6 +30,7 @@
 
     garage = {
       roles.default.machines."vimes" = {};
+      # roles.default.machines."carrot" = {};
     };
   };
 
@@ -35,6 +40,14 @@
         ./services/postgres.nix
         ./services/hedgedoc.nix
         ./services/garage.nix
+        ./wrappedPackages
+        ./modules
+        ./utils
+      ];
+    };
+    carrot = {pkgs, ...}: {
+      imports = [
+        # ./services/garage.nix
         ./wrappedPackages
         ./modules
         ./utils
