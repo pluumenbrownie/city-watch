@@ -1200,6 +1200,7 @@
         "fpu_exception": false,
         "cpuid_level": 13,
         "write_protect": false,
+        "tlb_size": 32657,
         "clflush_size": 64,
         "cache_alignment": 64,
         "address_sizes": {
@@ -1223,7 +1224,7 @@
           "value": 133
         },
         "slot": {
-          "bus": 2,
+          "bus": 0,
           "number": 0
         },
         "base_class": {
@@ -1236,32 +1237,37 @@
           "name": "Disk",
           "value": 0
         },
+        "vendor": {
+          "hex": "0000",
+          "name": "Samsung",
+          "value": 0
+        },
         "device": {
           "hex": "0000",
-          "name": "OCZ-VERTEX3",
+          "name": "SSD 860",
           "value": 0
         },
         "revision": {
           "hex": "0000",
-          "name": "2.25",
+          "name": "2B6Q",
           "value": 0
         },
-        "serial": "OCZ-GRC6EU657PBHT1EI",
-        "model": "OCZ-VERTEX3",
+        "serial": "S3Z2NB2KB06290J",
+        "model": "Samsung SSD 860",
         "sysfs_id": "/class/block/sdb",
-        "sysfs_bus_id": "2:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:1f.2/ata3/host2/target2:0:0/2:0:0:0",
+        "sysfs_bus_id": "0:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:1f.2/ata1/host0/target0:0:0/0:0:0:0",
         "unix_device_names": [
-          "/dev/disk/by-id/ata-OCZ-VERTEX3_OCZ-GRC6EU657PBHT1EI",
-          "/dev/disk/by-id/wwn-0x5e83a976c3ff7cdc",
-          "/dev/disk/by-path/pci-0000:00:1f.2-ata-3",
-          "/dev/disk/by-path/pci-0000:00:1f.2-ata-3.0",
+          "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB2KB06290J",
+          "/dev/disk/by-id/wwn-0x5002538e40a7687c",
+          "/dev/disk/by-path/pci-0000:00:1f.2-ata-1",
+          "/dev/disk/by-path/pci-0000:00:1f.2-ata-1.0",
           "/dev/sdb"
         ],
         "resources": [
           {
             "type": "disk_geo",
-            "cylinders": 14593,
+            "cylinders": 60801,
             "heads": 255,
             "sectors": 63,
             "size": "0x0",
@@ -1270,7 +1276,7 @@
           {
             "type": "size",
             "unit": "sectors",
-            "value_1": 234441648,
+            "value_1": 976773168,
             "value_2": 512
           }
         ],
@@ -1390,7 +1396,7 @@
           "value": 133
         },
         "slot": {
-          "bus": 0,
+          "bus": 2,
           "number": 0
         },
         "base_class": {
@@ -1403,37 +1409,32 @@
           "name": "Disk",
           "value": 0
         },
-        "vendor": {
-          "hex": "0000",
-          "name": "Samsung",
-          "value": 0
-        },
         "device": {
           "hex": "0000",
-          "name": "SSD 860",
+          "name": "OCZ-VERTEX3",
           "value": 0
         },
         "revision": {
           "hex": "0000",
-          "name": "2B6Q",
+          "name": "2.25",
           "value": 0
         },
-        "serial": "S3Z2NB2KB06290J",
-        "model": "Samsung SSD 860",
+        "serial": "OCZ-GRC6EU657PBHT1EI",
+        "model": "OCZ-VERTEX3",
         "sysfs_id": "/class/block/sda",
-        "sysfs_bus_id": "0:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:1f.2/ata1/host0/target0:0:0/0:0:0:0",
+        "sysfs_bus_id": "2:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:1f.2/ata3/host2/target2:0:0/2:0:0:0",
         "unix_device_names": [
-          "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S3Z2NB2KB06290J",
-          "/dev/disk/by-id/wwn-0x5002538e40a7687c",
-          "/dev/disk/by-path/pci-0000:00:1f.2-ata-1",
-          "/dev/disk/by-path/pci-0000:00:1f.2-ata-1.0",
+          "/dev/disk/by-id/ata-OCZ-VERTEX3_OCZ-GRC6EU657PBHT1EI",
+          "/dev/disk/by-id/wwn-0x5e83a976c3ff7cdc",
+          "/dev/disk/by-path/pci-0000:00:1f.2-ata-3",
+          "/dev/disk/by-path/pci-0000:00:1f.2-ata-3.0",
           "/dev/sda"
         ],
         "resources": [
           {
             "type": "disk_geo",
-            "cylinders": 60801,
+            "cylinders": 14593,
             "heads": 255,
             "sectors": 63,
             "size": "0x0",
@@ -1442,7 +1443,7 @@
           {
             "type": "size",
             "unit": "sectors",
-            "value_1": 976773168,
+            "value_1": 234441648,
             "value_2": 512
           }
         ],
