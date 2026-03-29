@@ -30,7 +30,7 @@
 
     garage = {
       roles.default.machines."vimes" = {};
-      # roles.default.machines."carrot" = {};
+      roles.default.machines."carrot" = {};
     };
   };
 
@@ -47,7 +47,7 @@
     };
     carrot = {pkgs, ...}: {
       imports = [
-        # ./services/garage.nix
+        ./services/garage.nix
         ./wrappedPackages
         ./modules
         ./utils
