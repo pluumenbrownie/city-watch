@@ -18,6 +18,13 @@
     };
 
     pkgs = nixpkgs.legacyPackages."x86_64-linux";
+
+    python = pkgs.python3.override {
+      self = python;
+      packageOverrides = pyfinal: pyprev: {
+        garage_admin_sdk = pyfinal.callPackage ./pkgs/python/garage_sdk.nix {};
+      };
+    };
   in {
     inherit (clan.config) nixosConfigurations nixosModules clanInternals;
     clan = clan.config;
@@ -36,6 +43,11 @@
           packages = [
             clan-core.packages.${system}.clan-cli
             pkgs.disko
+            (python.withPackages (pypkgs:
+              with pypkgs; [
+                minio
+                garage_admin_sdk
+              ]))
           ];
         };
       });
