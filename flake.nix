@@ -2,12 +2,15 @@
   inputs.clan-core.url = "https://git.clan.lol/clan/clan-core/archive/main.tar.gz";
   inputs.nixpkgs.follows = "clan-core/nixpkgs";
   inputs.wrappers.url = "github:Lassulus/wrappers";
-  inputs.wrappers.inputs.wrappers.follows = "clan-core/nixpkgs";
+  inputs.wrappers.inputs.nixpkgs.follows = "clan-core/nixpkgs";
+  inputs.garage-opener.url = "./pkgs/garage_opener";
+  inputs.garage-opener.inputs.nixpkgs.follows = "clan-core/nixpkgs";
 
   outputs = {
     self,
     clan-core,
     nixpkgs,
+    garage-opener,
     ...
   } @ inputs: let
     # Usage see: https://docs.clan.lol
@@ -18,13 +21,6 @@
     };
 
     pkgs = nixpkgs.legacyPackages."x86_64-linux";
-
-    python = pkgs.python3.override {
-      self = python;
-      packageOverrides = pyfinal: pyprev: {
-        garage_admin_sdk = pyfinal.callPackage ./pkgs/python/garage_sdk.nix {};
-      };
-    };
   in {
     inherit (clan.config) nixosConfigurations nixosModules clanInternals;
     clan = clan.config;
@@ -43,11 +39,7 @@
           packages = [
             clan-core.packages.${system}.clan-cli
             pkgs.disko
-            (python.withPackages (pypkgs:
-              with pypkgs; [
-                minio
-                garage_admin_sdk
-              ]))
+            garage-opener.outputs.packages.${system}.default
           ];
         };
       });
