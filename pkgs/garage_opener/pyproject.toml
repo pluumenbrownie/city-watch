@@ -6,7 +6,7 @@ requires-python = ">=3.13"
 dependencies = []
 
 [project.scripts]
-garage-opener = "garage_opener:garage_opener"
+garage-opener = "garage_opener.opener:main"
 
 [build-system]
 requires = ["uv_build>=0.11.0,<0.12.0"]
