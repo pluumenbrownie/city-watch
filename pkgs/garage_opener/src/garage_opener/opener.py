@@ -1,2 +1,5 @@
+import garage_admin_sdk
+
+
 def main():
-    print("separate file")
+    print(f"{garage_admin_sdk.version}")

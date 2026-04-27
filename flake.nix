@@ -39,9 +39,11 @@
           packages = [
             clan-core.packages.${system}.clan-cli
             pkgs.disko
+            pkgs.uv
             garage-opener.outputs.packages.${system}.default
           ];
         };
+        garage-opener = garage-opener.outputs.devShells.${system}.default;
       });
   };
 }

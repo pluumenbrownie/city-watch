@@ -43,6 +43,18 @@
       root = "$REPO_ROOT";
     };
 
+    pyprojectOverrides = final: prev: let
+      inherit (final) pkgs;
+    in {
+      garage-admin-sdk = prev.garage-admin-sdk.overrideAttrs (old: {
+        nativeBuildInputs =
+          (old.nativeBuildInputs or [])
+          ++ final.resolveBuildSystem {
+            setuptools = [];
+          };
+      });
+    };
+
     pythonSets = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -55,10 +67,12 @@
           lib.composeManyExtensions [
             pyproject-build-systems.overlays.wheel
             overlay
+            pyprojectOverrides
           ]
         )
     );
   in {
+    test = overlay;
     devShells = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
