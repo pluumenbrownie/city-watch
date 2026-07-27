@@ -3,14 +3,16 @@
   inputs.nixpkgs.follows = "clan-core/nixpkgs";
   inputs.wrappers.url = "github:Lassulus/wrappers";
   inputs.wrappers.inputs.nixpkgs.follows = "clan-core/nixpkgs";
-  inputs.garage-opener.url = "./pkgs/garage_opener";
-  inputs.garage-opener.inputs.nixpkgs.follows = "clan-core/nixpkgs";
+  # inputs.garage-opener.url = "./pkgs/garage_opener";
+  # inputs.garage-opener.inputs.nixpkgs.follows = "clan-core/nixpkgs";
+  inputs.filestash.url = "./pkgs/filestash";
+  inputs.filestash.inputs.nixpkgs.follows = "clan-core/nixpkgs";
 
   outputs = {
     self,
     clan-core,
     nixpkgs,
-    garage-opener,
+    # garage-opener,
     ...
   } @ inputs: let
     # Usage see: https://docs.clan.lol
@@ -40,10 +42,10 @@
             clan-core.packages.${system}.clan-cli
             pkgs.disko
             pkgs.uv
-            garage-opener.outputs.packages.${system}.default
+            # garage-opener.outputs.packages.${system}.default
           ];
         };
-        garage-opener = garage-opener.outputs.devShells.${system}.default;
+        # garage-opener = garage-opener.outputs.devShells.${system}.default;
       });
   };
 }

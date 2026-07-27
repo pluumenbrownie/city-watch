@@ -28,7 +28,7 @@
         replication_factor = 1;
 
         rpc_bind_addr = "127.0.0.1:3901";
-        rpc_public_addr = "";
+        rpc_public_addr = "127.0.0.1:3901";
 
         s3_api = {
           api_bind_addr = "127.0.0.1:3900";

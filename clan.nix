@@ -35,11 +35,12 @@
   };
 
   machines = {
-    vimes = {pkgs, ...}: {
+    vimes = {inputs, ...}: {
       imports = [
         ./services/postgres.nix
-        ./services/hedgedoc.nix
+        # ./services/hedgedoc.nix
         ./services/garage.nix
+        ./services/filestash.nix
         ./wrappedPackages
         ./modules
         ./utils
